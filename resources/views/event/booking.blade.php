@@ -19,7 +19,7 @@
                 <input type="email" name="email" value="{{ auth()->user()->email }}" class="w-full border rounded px-3 py-2" readonly>
             </div>
 
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Confirm Booking</button>
+            <button type="submit" class="bg-primary-600 text-white px-4 py-2 rounded hover:bg-primary-700 transition-colors">Confirm Booking</button>
         </form>
     </div>
 </div>

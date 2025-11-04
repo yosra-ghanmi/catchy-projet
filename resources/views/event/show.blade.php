@@ -10,13 +10,13 @@
         <p class="mt-2 font-semibold">Location: {{ $event->location }}</p>
         <p class="mt-1 font-semibold">Price: {{ $event->price ? '$' . $event->price : 'Free' }}</p>
         <div class="mt-4 flex items-center space-x-4">
-            <a href="{{ route('events.book', $event->id) }}" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">Book Now</a>
+            <a href="{{ route('events.book', $event->id) }}" class="bg-primary-600 text-white px-4 py-2 rounded hover:bg-primary-700 transition-colors">Book Now</a>
             @auth
                 <form action="{{ route('events.favorite', $event->id) }}" method="POST" class="inline">
                     @csrf
                     @method('POST')
-                    <button type="submit" class="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors">
-                        <svg class="w-6 h-6 {{ $isFavorited ? 'fill-current text-red-600' : 'stroke-current' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <button type="submit" class="flex items-center space-x-2 text-gray-600 hover:text-accent-600 transition-colors">
+                        <svg class="w-6 h-6 {{ $isFavorited ? 'fill-current text-accent-600' : 'stroke-current' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                         <span>{{ $isFavorited ? 'Remove from Favorites' : 'Add to Favorites' }}</span>
@@ -84,7 +84,7 @@
                             <label class="block text-sm font-medium text-gray-700">Comment (optional)</label>
                             <textarea name="comment" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">{{ $userReview ? $userReview->comment : '' }}</textarea>
                         </div>
-                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">{{ $userReview ? 'Update Review' : 'Submit Review' }}</button>
+                        <button type="submit" class="bg-primary-600 text-white px-4 py-2 rounded hover:bg-primary-700 transition-colors">{{ $userReview ? 'Update Review' : 'Submit Review' }}</button>
                     </form>
                 </div>
             @endauth
